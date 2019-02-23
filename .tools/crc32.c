@@ -25,10 +25,10 @@ int main(int argc, char **argv){
 	if(argc >= 2){
 		FILE *fp = fopen(argv[1], "rb");
 		if(!fp){
-			printf("%.8X\t%10.u\t%s\n", 0, argv[1]);
+			printf("%.8X\t%10.1u\t%s\n", 0, 0, argv[1]);
 			return 0;
 		}
-		printf("%.8X\t%10.u\t%s\n", fcrc32(fp), (unsigned int)fsize(fp), argv[1]);
+		printf("%.8X\t%10.1u\t%s\n", fcrc32(fp), (unsigned int)fsize(fp), argv[1]);
 
 		fclose(fp);
 	}

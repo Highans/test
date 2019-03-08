@@ -16,7 +16,10 @@ do
 	fi
 done
 
-cat $flist
-make -C $crctool_folder clean
-
-git add $flist
+if [ -f $flist ]
+then
+	cat $flist
+	make -C $crctool_folder clean
+	
+	git add $flist
+fi

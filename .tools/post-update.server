@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+
+#propagate this stuff to raw
+OUTDIR=../raw/$(basename $PWD)/
+mkdir -p $OUTDIR
+git --work-tree=../raw/test.git/ fetch --all
+git --work-tree=../raw/test.git/ reset --hard
